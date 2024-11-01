@@ -31,9 +31,9 @@ public class FuncionarioService {
         return funcionarios.stream().mapToDouble(Funcionario::calcularSalario).sum();
     }
 
-    public Double calcularIndice(Funcionario funcionario){
-        //return funcionario.calcularIndice();
-        return null;
+    public Double calcularIndice(Pedagogico funcionario){
+        return funcionario.calcularIndice();
+        //return null;
     }
 
 }

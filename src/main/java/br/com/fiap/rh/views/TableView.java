@@ -27,17 +27,17 @@ public class TableView extends VerticalLayout {
 
         grid.addColumn( Funcionario::getTipo).setHeader("Tipo");
 
-//        grid.addComponentColumn(funcionario -> {
-//            if (funcionario instanceof Pedagogico) {
-//                return new Paragraph(calcularIndice((Pedagogico) funcionario));
-//            }
-//            return new Paragraph("N/A");
-//        }).setHeader("Indice");
+       grid.addComponentColumn(funcionario -> {
+            if (funcionario instanceof Pedagogico) {
+                return new Paragraph(calcularIndice((Pedagogico) funcionario));
+            }
+            return new Paragraph("N/A");
+        }).setHeader("Indice");
 
         add(grid);
     }
 
-    private String calcularIndice(Funcionario funcionario) {
+    private String calcularIndice(Pedagogico funcionario) {
         return funcionarioService.calcularIndice(funcionario).toString();
     }
 }
